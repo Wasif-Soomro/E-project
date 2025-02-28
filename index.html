@@ -27,6 +27,10 @@
     padding: 0;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   h1,
   h2,
   h3,
@@ -35,7 +39,7 @@
   h6 {
     font-family: "Montserrat", serif;
     color: #1E3A8A;
-    font-weight: 550;
+    font-weight: 600;
   }
 
   .navbar {
@@ -98,15 +102,19 @@
     max-height: 40px;
     width: auto;
   }
+
+  .card {
+    background-color: #6b72805d;
+  }
 </style>
 
 <body>
- 
-  <nav class="navbar navbar-expand-lg">
+
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#">
         <img src="assets/images/navlogo.png" alt="Logo" class="logo">
-        gaMedia
+        PicnicGames
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -123,11 +131,14 @@
               Category
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Kids</a></li>
-              <li><a class="dropdown-item" href="#">Male</a></li>
-              <li><a class="dropdown-item" href="#">Female</a></li>
-              <li><a class="dropdown-item" href="#">Family</a></li>
+              <li><a class="dropdown-item" href="#kids">Kids</a></li>
+              <li><a class="dropdown-item" href="#family">Family</a></li>
+              <li><a class="dropdown-item" href="#male">Male</a></li>
+              <li><a class="dropdown-item" href="#female">Female</a></li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
           </li>
         </ul>
       </div>
@@ -165,355 +176,1027 @@
     </button>
   </div>
 
+  <div class="container mt-4">
+    <hr class="border-3 border-primary">
+    <div id="kids" class=" row text-center">
+      <h1>kids</h1>
+      <h2 class="mt-5">Indoor</h2>
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/images/uno.jpg" class="img-fluid rounded-start" alt="Image description">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">UNO</h5>
+                <p class="card-text">
+                  UNO is a fun and fast-paced card game where players race to be the first to score 500 points (or
+                  another agreed target).
+                  It's played with a special deck of 108 cards and is popular for parties, family game nights, and
+                  casual play.
+                </p>
+                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uno">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/images/jenga.jpg" class="img-fluid rounded-start" alt="Image description">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Jenga</h5>
+                <p class="card-text">
+                  Jenga is a fun and challenging block-stacking game where players take turns removing wooden blocks
+                  from a
+                  tower and placing them on top without making it collapse.
+                  It requires strategy, patience, and a steady hand.
+                </p>
+                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#jenga">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-4">
+    <div class="row text-center">
+      <h2 class="mt-5"> Outdoor</h2>
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/images/basketball.jpg" class="img-fluid rounded-start" alt="Image description">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Basketball</h5>
+                <p class="card-text">
+                  Basketball is a team sport where players aim to score points by throwing a ball through the opponent's
+                  hoop.
+                  It is one of the most popular sports worldwide, played professionally and recreationally.
+                </p>
+                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basketball">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/images/bocce ball.jpg" class="img-fluid rounded-start" alt="Image description">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Bocce Ball</h5>
+                <p class="card-text">
+                  Bocce Ball is an ancient Italian lawn game where players take turns tossing balls to get as close as
+                  possible to a smaller target ball (called the pallino).
+                  It's a relaxing yet strategic game, often played at parks, beaches, or backyards.
+                </p>
+                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bocce">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 
-<div>
-  <h1>kids</h1>
-  <h2>Indoor</h2>
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="assets/images/uno.jpg" class="img-fluid rounded-start" alt="Image description">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title </h5>
-          <p class="card-text">
-            This is a wider card with supporting text below as a natural lead-in to additional content.
-            This content is a little bit longer.
-          </p>
-          <a href="" class="btn btn-primary">Learn More</a>
-          <p class="card-text">
-            <small class="text-body-secondary">Last updated 3 mins ago</small>
-          </p>
+  <div class="container mt-4">
+    <hr class="border-3 border-primary">
+    <div id="family" class="row text-center">
+      <h1 class="mt-5">Family</h1>
+      <h2>Indoor</h2>
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/images/monopoly.jpg" class="img-fluid rounded-start" alt="Image description">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Monopoly</h5>
+                <p class="card-text">
+                  Monopoly is a classic board game about buying, trading, and developing properties to bankrupt
+                  opponents
+                  and become the richest player.
+                  It is one of the most famous board games worldwide and is published by Hasbro.
+                </p>
+                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#monopoly">Learn More</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="assets/images/jenga.jpg" class="img-fluid rounded-start" alt="Image description">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title 2</h5>
-          <p class="card-text">
-            This is a wider card with supporting text below as a natural lead-in to additional content. 
-            This content is a little bit longer.
-          </p>
-          <a href="" class="btn btn-primary">Learn More</a>
-          <p class="card-text">
-            <small class="text-body-secondary">Last updated 3 mins ago</small>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <h2> Outdoor</h2>
-  
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img src="assets/images/basketball.jpg" class="img-fluid rounded-start" alt="Image description">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title 3</h5>
-          <p class="card-text">
-            This is a wider card with supporting text below as a natural lead-in to additional content. 
-            This content is a little bit longer.
-          </p>
-          <a href="" class="btn btn-primary">Learn More</a>
-          <p class="card-text">
-            <small class="text-body-secondary">Last updated 3 mins ago</small>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/images/scramble.jpg" class="img-fluid rounded-start" alt="Image description">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Scramble</h5>
+                <p class="card-text">
+                  Scrabble is a classic word board game where players use letter tiles to create words and score points
+                  based on the letters and placement on the board.
+                  It is a game of vocabulary, strategy, and skill.
+                </p>
 
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="assets/images/bocce ball.jpg" class="img-fluid rounded-start" alt="Image description">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title 2</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural lead-in to additional content. 
-                This content is a little bit longer.
-              </p>
-              <a href="" class="btn btn-primary">Learn More</a>
-              <p class="card-text">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
-              </p>
+                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#scramble">Learn More</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-</div>
-<div>
-    <h1>Family</h1>
-    <h2>Indoor</h2>
-    <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="assets/images/monopoly.jpg" class="img-fluid rounded-start" alt="Image description">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural lead-in to additional content. 
-                This content is a little bit longer.
-              </p>
-            
-              <a href="" class="btn btn-primary">Learn More</a>
-              <p class="card-text">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="assets/images/scramble.jpg" class="img-fluid rounded-start" alt="Image description">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title 2</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural lead-in to additional content. 
-                This content is a little bit longer.
-              </p>
-              
-              <a href="" class="btn btn-primary">Learn More</a>
-              <p class="card-text">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
+    <div class="row text-center">
       <h2>Outdoor</h2>
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="assets/images/corn hole.jpg" class="img-fluid rounded-start" alt="Image description">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title 3</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural lead-in to additional content. 
-                This content is a little bit longer.
-              </p>
-              
-              <a href="" class="btn btn-primary">Learn More</a>
-              <p class="card-text">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
-              </p>
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/images/corn hole.jpg" class="img-fluid rounded-start" alt="Image description">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Corn Hole</h5>
+                <p class="card-text">
+                  Cornhole (also called Bean Bag Toss) is a popular outdoor lawn game where players throw bean bags at a
+                  raised board with a hole in it.
+                  It's commonly played at tailgates, barbecues, and casual gatherings.
+                </p>
+
+                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#corn">Learn More</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="assets/images/mini golf.jpg" class="img-fluid rounded-start" alt="Image description">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title 4</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural lead-in to additional content. 
-                This content is a little bit longer.
-              </p>
-              <a href="" class="btn btn-primary">Learn More</a>
-              <p class="card-text">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
-              </p>
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/images/mini golf.jpg" class="img-fluid rounded-start" alt="Image description">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">DIY Mini Golf</h5>
+                <p class="card-text">
+                  Mini Golf (or Putt-Putt) is a fun, simplified version of golf that can be played indoors or outdoors.
+                  A DIY Mini Golf course allows you to create your own holes using household items, making it a great
+                  game
+                  for family, friends, or parties.
+                </p>
+                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mini">Learn More</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-</div>
-<div>
-    <h1>Men</h1>
-    <h2>Indoor</h2>
-    <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="assets/images/poker.jpg" class="img-fluid rounded-start" alt="Image description">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural lead-in to additional content. 
-                This content is a little bit longer.
-              </p>
-              <a href="" class="btn btn-primary">Learn More</a>
-              <p class="card-text">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
-              </p>
+    </div>
+  </div>
+  <div class="container mt-4">
+    <hr class="border-3 border-primary">
+    <div id="male" class="row text-center">
+      <h1>Men</h1>
+      <h2>Indoor</h2>
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/images/poker.jpg" class="img-fluid rounded-start" alt="Image description">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Poker</h5>
+                <p class="card-text">
+                  Poker is a card game that involves strategy, skill, and betting, where players compete to form the
+                  best
+                  hand or bluff their opponents into folding.
+                  The most popular version is Texas Hold'em, but other variations exist, such as Omaha, Five-Card Draw,
+                  and
+                  Seven-Card Stud.
+                </p>
+                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#poker">Learn More</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="assets/images/chess.jpg" class="img-fluid rounded-start" alt="Image description">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title 2</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural lead-in to additional content. 
-                This content is a little bit longer.
-              </p>
-              <a href="" class="btn btn-primary">Learn More</a>
-              <p class="card-text">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
-              </p>
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/images/chess.jpg" class="img-fluid rounded-start" alt="Image description">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Chess</h5>
+                <p class="card-text">
+                  Chess is a strategic board game played between two players. It requires deep thinking, tactical moves,
+                  and
+                  strategic planning.
+                  Chess is one of the most popular and respected board games in the world.
+                </p>
+                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#chess">Learn More</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
+    <div class="row text-center">
       <h2>Outdoor</h2>
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="assets/images/dodge.jpg" class="img-fluid rounded-start" alt="Image description">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title 3</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural lead-in to additional content. 
-                This content is a little bit longer.
-              </p>
-              
-              <a href="" class="btn btn-primary">Learn More</a>
-              <p class="card-text">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
-              </p>
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/images/dodge.jpg" class="img-fluid rounded-start" alt="Image description">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Dodge Ball</h5>
+                <p class="card-text">
+                  Dodgeball is a fast-paced team sport where players try to eliminate opponents by hitting them with a
+                  ball
+                  while avoiding getting hit themselves.
+                  It is commonly played in schools, gymnasiums, and recreational leagues.
+                </p>
+
+                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dodge">Learn More</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="assets/images/tug.jpg" class="img-fluid rounded-start" alt="Image description">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title 4</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural lead-in to additional content. 
-                This content is a little bit longer.
-              </p>
-              
-              <a href="" class="btn btn-primary">Learn More</a>
-              <p class="card-text">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
-              </p>
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/images/tug.jpg" class="img-fluid rounded-start" alt="Image description">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Tug of War</h5>
+                <p class="card-text">
+                  Tug of War is a classic team sport where two teams pull on opposite ends of a rope, trying to drag the
+                  other team across a designated line.
+                  It is a test of strength, teamwork, and strategy.
+                </p>
+
+                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tug">Learn More</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-</div>
-<div>
-    <h1>Women</h1>
-    <h2>Indoor</h2>
-    <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="assets/images/puzzle-7613344_640.jpg" class="img-fluid rounded-start" alt="Image description">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural lead-in to additional content. 
-                This content is a little bit longer.
-              </p>
-              
-              <a href="" class="btn btn-primary">Learn More</a>
-              <p class="card-text">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
-              </p>
+    </div>
+  </div>
+  <div class="container mt-4">
+    <hr class="border-3 border-primary">
+    <div id="female" class="row text-center">
+      <h1>Women</h1>
+      <h2>Indoor</h2>
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/images/puzzle-7613344_640.jpg" class="img-fluid rounded-start" alt="Image description">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Puzzle</h5>
+                <p class="card-text">
+                  A puzzle game is a type of game that challenges players to solve problems using logic, pattern
+                  recognition, or creativity.
+                  Puzzle games can be played alone or with multiple players, depending on the type of puzzle.
+                </p>
+
+                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#puzzle">Learn More</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="assets/images/darts.jpg" class="img-fluid rounded-start" alt="Image description">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title 2</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural lead-in to additional content. 
-                This content is a little bit longer.
-              </p>
-              <a href="" class="btn btn-primary">Learn More</a>
-              <p class="card-text">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
-              </p>
+      <div class="col-md-6">
+        <div class="card mb-3" style="max-width: 540px;">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="assets/images/darts.jpg" class="img-fluid rounded-start" alt="Image description">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Darts</h5>
+                <p class="card-text">
+                  Darts is a precision-based game where players throw small darts at a circular target (dartboard) to
+                  score
+                  points.
+                  It is played in bars, tournaments, and casual settings, requiring both skill and strategy.
+                </p>
+                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#darts">Learn More</a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <h2>Outdoor</h2>
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="assets/images/hide and seek.jpg" class="img-fluid rounded-start" alt="Image description">
+      <div class="row text-center">
+        <h2>Outdoor</h2>
+        <div class="col-md-6">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="assets/images/hide and seek.jpg" class="img-fluid rounded-start" alt="Image description">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Hide and Seek</h5>
+                  <p class="card-text">
+                    Hide and Seek is a classic children's game played worldwide, where players hide while one person
+                    (the
+                    seeker) tries to find them.
+                    It's a fun and active game that encourages stealth, strategy, and observation skills.
+                  </p>
+                  <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hide">Learn More</a>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title 3</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural lead-in to additional content. 
-                This content is a little bit longer.
-              </p>
-              <a href="" class="btn btn-primary">Learn More</a>
-              <p class="card-text">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
-              </p>
+        </div>
+        <div class="col-md-6">
+          <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="assets/images/volly.jpg" class="img-fluid rounded-start" alt="Image description">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Volly Ball</h5>
+                  <p class="card-text">
+                    Volleyball is a team sport where players hit a ball over a net to score points by landing the ball
+                    on the
+                    opponent's side.
+                    It requires teamwork, agility, and strategy.
+                  </p>
+                  <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#volly">Learn More</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="assets/images/volly.jpg" class="img-fluid rounded-start" alt="Image description">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title 4</h5>
-              <p class="card-text">
-                This is a wider card with supporting text below as a natural lead-in to additional content. 
-                This content is a little bit longer.
-              </p>
-              <a href="" class="btn btn-primary">Learn More</a>
-              <p class="card-text">
-                <small class="text-body-secondary">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
+    </div>
+  </div>
+  <!-- Modal Tags for cards -->
+  <div class="modal fade" id="uno" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">More Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Number of Players
+            Minimum Players: 2
+            Maximum Players: 10 (Recommended: 3-6 for the best experience)
+          </p>
+          <h5>How to play</h5>
+          <p>Game Setup
+            Shuffle the deck and deal 7 cards to each player.
+            Place the remaining cards face down (Draw Pile).
+            Flip the top card to start a Discard Pile (if it's an action card, follow the effect).
+            Game Play
+            The first player (left of the dealer) matches the top card on the discard pile by color or number.
+            If a player doesn't have a matching card, they must draw from the deck:
+            If they can play the drawn card, they may.
+            If not, they skip their turn.
+            Use Action Cards strategically to block or punish opponents.
+            Call "UNO" when you have one card left:
+            If another player catches you not saying "UNO" before your next turn, you draw 2 extra cards.
+            The round continues until one player plays their last card.
+          </p>
+          <h5>Rules:</h5>
+          <p>Must match color or number unless playing a Wild card.
+            You can't play a Wild Draw Four unless you have no playable cards of the current color.
+            Stacking Penalties: Official rules don't allow stacking Draw Two or Draw Four cards (house rules may vary).
+            If the Draw Pile is empty, reshuffle the Discard Pile.
+            A player can challenge a Wild Draw Four if they think it was played unfairly. If the challenger is correct,
+            the other player draws 4 cards instead.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
-</div>
+    </div>
+  </div>
+  <div class="modal fade" id="jenga" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">More Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Number of Players
+            Minimum Players: 2
+            Maximum Players: No limit (Best with 2-6 players)
+            Solo Play: Can be played alone as a skill challenge
+          </p>
+          <h5>How to play</h5>
+          <p>The first player removes one block from any row below the top using one hand.
+            Place the block on top of the tower in the same crisscross pattern.
+            Players take turns removing and stacking blocks without making the tower fall.
+            The game continues until a player causes the tower to collapse.
+            The last successful player before the collapse is the winner.
+          </p>
+          <h5>Rules:</h5>
+          <p>Only one hand can be used at a time to remove blocks.
+            Players must take a turn; skipping is not allowed.
+            Only touch one block at a time—once you move a block, you must take it.
+            The new block must be stacked on top before the next player’s turn.
+            The game ends when the tower falls (even if only one block falls).
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="basketball" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">More Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Number of Players
+            Official Game (Full Court): 5 vs. 5 (10 players on the court)
+            Street Basketball (Half Court): 3 vs. 3 or 1 vs. 1
+            Total Team Size: 12 players per team (with substitutes)
+          </p>
+          <h5>How to play</h5>
+          <p>Game Starts with a Jump Ball: The referee throws the ball in the air, and players jump to gain possession.
+            Teams Move the Ball by Dribbling & Passing: Players must dribble (bounce the ball) while moving.
+            Scoring Points:
+            2 Points: Made basket from inside the three-point arc.
+            3 Points: Made basket from beyond the three-point line.
+            1 Point: Free throw after a foul.
+            Offense and Defense:
+            The offensive team tries to score.
+            The defensive team blocks, steals, and defends the hoop.
+            24-Second Shot Clock: Teams must attempt a shot within 24 seconds.
+            Possession Changes After a Basket: The opposing team gets the ball and starts from their half.
+            Game Continues Until the Final Buzzer: The team with the most points wins.
+          </p>
+          <h5>Rules:</h5>
+          <p>
+            Dribbling Rule: Players must dribble while moving. No running with the ball.
+            Double Dribble: If a player stops dribbling and starts again, it’s a violation.
+            Traveling: Moving without dribbling is not allowed.
+            3-Second Rule: An offensive player cannot stay in the key (paint) for more than 3 seconds.
+            Backcourt Violation: Once a team crosses half-court, they cannot return to their own half.
+            Shot Clock Violation: If a team doesn’t attempt a shot within 24 seconds, the opponent gets possession.
+            Fouls and Free Throws
+            Personal Fouls: Physical contact (pushing, hitting, tripping) results in free throws.
+            Team Fouls: If a team commits 5 fouls in a quarter, the opponent gets free throws.
+            Technical Foul: Unsportsmanlike behavior (e.g., arguing with referees) leads to a free throw for the
+            opposing team.
+            Flagrant Foul: Violent contact results in 2 free throws and possession for the opponent.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="bocce" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">More Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Number of Players
+            2 players (1 vs. 1)
+            4 players (2 vs. 2 teams)
+            8 players (4 vs. 4 teams)
+          </p>
+          <h5>How to play</h5>
+          <p>The first player/team throws the pallino to begin the round.
+            The same player/team throws the first bocce ball, trying to land close to the pallino.
+            The opposing team then throws a bocce ball, trying to get closer than the first ball.
+            The team furthest from the pallino keeps throwing until they are closest or run out of balls.
+            Once all bocce balls are thrown, the round ends, and points are scored.
+            The team who scored last starts the next round by throwing the pallino.
+          </p>
+          <h5>Rules:</h5>
+          <p>Players must stay behind the throwing line when tossing.
+            Bocce balls must be underhand thrown.
+            The pallino must land at least halfway down the court.
+            If a bocce ball or pallino goes out of bounds, it is removed from play.
+            Players can hit the pallino or opponent's balls to change positions.
+            If teams cannot determine the closest ball, a measuring device is used.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="monopoly" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">More Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Number of Players
+            Minimum Players: 2
+            Maximum Players: 8 (Recommended: 4-6 for the best experience)
+          </p>
+          <h5>How to play</h5>
+          <p>Players take turns rolling two dice and move their token forward the total number of spaces. If they land
+            on an unowned property, they can buy it from the bank, but if it is owned by another player, they must pay
+            rent to the owner. Players can buy houses and hotels to increase rent and trade properties with others. When
+            landing on Chance or Community Chest spaces, they must draw a card and follow the instructions. If a player
+            lands on "Go to Jail," draws a "Go to Jail" card, or rolls three doubles in a row, they are sent to jail and
+            can get out by paying a $50 fine, using a "Get Out of Jail Free" card, or rolling doubles. Each time a
+            player passes GO, they collect $200. If a player runs out of money, they must sell houses, hotels, or
+            mortgage properties, and if they still cannot pay, they are bankrupt and out of the game. The game ends when
+            all but one player has gone bankrupt.
+          </p>
+          <h5>Rules:</h5>
+          <p>No Free Money in the Center: There is no rule for placing money in the center for "Free Parking."
+            Trading is Allowed: Players can exchange properties, money, or immunity from rent.
+            Bank Auctions: If a player doesn’t buy a property they land on, the bank auctions it.
+            Mortgaging: Players can mortgage properties for half their value but must pay 10% interest to lift the
+            mortgage.
+            Bankruptcy: When a player cannot pay rent, fines, or debt, they are eliminated.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="scramble" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">More Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Number of Players
+            Minimum Players: 2
+            Maximum Players: 4
+            Solo Play: Some players play alone for practice or improvement.
+          </p>
+          <h5>How to play</h5>
+          <p>Each player begins by drawing 7 tiles from the tile bag. The first player starts the game by placing a word
+            across the center star square. On each turn, a player must place a word connecting to existing words,
+            calculate the word score, and draw new tiles to maintain 7 tiles on their rack. Words must be found in an
+            official dictionary, formed horizontally or vertically, and connected to previous words on the board. Each
+            letter has a point value (e.g., "A" = 1, "Z" = 10), and bonus squares can increase scores: Double Letter
+            (DL) doubles a letter’s score, Triple Letter (TL) triples a letter’s score, Double Word (DW) doubles the
+            word’s score, and Triple Word (TW) triples the word’s score. If a player believes a word is invalid, they
+            can challenge it using the dictionary. The game ends when no tiles remain and a player uses all their tiles,
+            with the player holding the highest score declared the winner.</p>
+          <h5>Rules:</h5>
+          <p>No Proper Nouns: Names, brands, or places are not allowed.
+            Using All 7 Tiles: If a player uses all their tiles in one turn, they get a 50-point bonus.
+            Swapping Tiles: A player can choose to skip their turn and exchange tiles.
+            Passing: Players can pass their turn if they can’t play a word.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="corn" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">More Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Number of Players
+            Singles: 2 players (1 vs. 1)
+            Doubles: 4 players (2 vs. 2)
+          </p>
+          <h5>How to play</h5>
+          <p>A coin toss determines the first thrower. Players take turns throwing underhand from behind the foul line,
+            with each player throwing all four bags before the next player takes their turn. Scoring is based on where
+            the bag lands: 1 point if it stays on the board, 3 points if it goes through the hole, and 0 points if it
+            lands off the board or bounces onto it. Cancellation scoring applies, meaning points cancel each other out;
+            for example, if Team A scores 6 points (two bags in the hole) and Team B scores 4 points (one bag in the
+            hole, one on the board), the final round score is 2 points for Team A (6 - 4 = 2). The first team to reach
+            exactly 21 points wins, though an optional rule reduces a team's score to 15 if they exceed 21 points.</p>
+          <h5>Rules:</h5>
+          <p>Players must throw from behind the foul line.
+            A bag that touches the ground first before landing on the board does not count.
+            Players cannot remove bags from the board until the round is over.
+            If a bag is knocked into the hole by another bag, it still counts as 3 points.
+            In doubles, teammates cannot give advice or coach during play.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="mini" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">More Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Number of Players
+            Minimum Players: 1 (You can play solo)
+            Maximum Players: No limit (Play in turns)
+            Recommended: 2-6 players for a smooth game
+          </p>
+          <h5>How to play</h5>
+          <p>Each player takes turns putting the ball.
+            Count the number of strokes (hits) it takes to get the ball into the hole.
+            Players complete the hole before the next player starts.
+            Record each player's score on a scorecard.
+            Players move to the next hole and repeat the process.
+            After all holes are completed, the player with the lowest total score wins.
+          </p>
+          <h5>Rules:</h5>
+          <p>Players must start behind the marked starting area.
+            If a ball goes off the course, return it to the previous spot with a 1-stroke penalty.
+            Players must hit the ball in one continuous motion (no pushing or dragging).
+            If the ball gets stuck in an obstacle, players can remove it with a 1-stroke penalty.
+            The maximum strokes per hole is 6 (to keep the game moving).
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="poker" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">More Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Number of Players
+            Minimum Players: 2
+            Maximum Players: 10 (Most common: 2-9 players)
+          </p>
+          <h5>How to play</h5>
+          <p>Blinds Are Posted
+            Two players post forced bets: Small Blind (SB) & Big Blind (BB).
+            Each Player Gets 2 Private Cards (Hole Cards)
+            First Betting Round (Pre-Flop)
+            Players can Call (match the bet), Raise (increase the bet), or Fold (quit the round).
+            The Flop (3 Community Cards Are Revealed)
+            Another round of betting happens.
+            The Turn (4th Community Card)
+            Another betting round.
+            The River (5th & Final Community Card)
+            Final betting round.
+            Showdown
+            Players reveal their hands, and the best 5-card combination wins the pot.
+          </p>
+          <h5>Rules:</h5>
+          <p>Types of Betting Actions
+            Check Pass the action to the next player without betting.
+            Bet Place chips in the pot to continue playing.
+            Call Match a bet to stay in the hand.
+            Raise Increase the current bet amount.
+            Fold Give up the hand and lose any bets made.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="chess" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">More Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Number of Players
+            2 players (1 vs. 1)
+            Chess Variants: Some versions involve multiple players or teams, but standard chess is strictly a two-player
+            game.
+          </p>
+          <h5>How to play</h5>
+          <p>To play chess, each player begins with 16 pieces arranged on an 8x8 board, ensuring a light-colored square
+            is in their bottom-right corner. White moves first, and players alternate turns, strategically moving their
+            pieces to attack, defend, and control the board. The objective is to checkmate the opponent’s king by
+            placing it in a position where it cannot escape capture. Each piece moves differently: the King moves one
+            square in any direction but cannot move into check; the Queen moves any number of squares vertically,
+            horizontally, or diagonally; the Rook moves in straight lines vertically or horizontally; the Bishop moves
+            diagonally across the board; the Knight moves in an L-shape and can jump over other pieces; and the Pawn
+            moves forward one square (or two on its first move) but captures diagonally. Pawns that reach the opponent’s
+            back rank can be promoted to any piece except a King.</p>
+          <h5>Rules:</h5>
+          <p>Chess follows specific rules to maintain fair play. Players must move only their own pieces and cannot skip
+            a turn. A player is in "check" if their King is attacked and must make a move to escape; if no legal moves
+            exist to remove the check, it is "checkmate," and the game ends. A special move called "castling" allows the
+            King and a Rook to move simultaneously under specific conditions for added safety. "En passant" is a unique
+            Pawn capture rule, and "stalemate" occurs when a player has no legal moves but is not in check, resulting in
+            a draw. The game can also end in a draw if insufficient material remains to checkmate, by threefold
+            repetition of the same position, or if 50 moves pass without a Pawn move or capture. Understanding these
+            rules ensures a strategic and fair game.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="dodge" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">More Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Number of Players
+            Official Teams: 6 vs. 6 (Standard game)
+            Minimum Players: 4 per team (8 total)
+            Maximum Players: Some versions allow up to 10 per team
+            Casual Play: Any number of players can participate, as long as teams are balanced
+          </p>
+          <h5>How to play</h5>
+          <p>Players are divided into two teams and positioned on opposite sides of the court, starting behind a
+            designated line. Six dodgeballs are lined up in the center, and at the beginning ("Opening Rush"), players
+            sprint to grab them. The objective is to eliminate opponents by throwing balls at them while avoiding being
+            hit. Players can dodge incoming throws or catch a ball to eliminate the thrower and bring back a teammate.
+            The game continues until one team is completely eliminated or time runs out.</p>
+          <h5>Rules:</h5>
+          <p>Players must throw from within their half of the court.
+            If hit by a ball, a player is out unless the ball bounces first.
+            Headshots do not count (depends on league rules).
+            If a player catches a ball, the thrower is out, and the catching team gains a player back.
+            Players can block a throw with a ball they are holding.
+            Out of Bounds Rules
+            Players must stay within their half of the court.
+            If a player steps out of bounds, they are eliminated.
+            Dead Ball Rule
+            If a ball hits the floor, wall, or another surface before hitting a player, it does not count.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="tug" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">More Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Number of Players
+            Standard Teams: 8 vs. 8 (According to official rules)
+            Minimum Players: 2 vs. 2
+            Maximum Players: No strict limit, but must be equal on both sides
+            Casual Play: Any even number of players can participate
+          </p>
+          <h5>How to play</h5>
+          <p>Teams are divided evenly, with equal players on each side.
+            The rope is placed at the center mark.
+            Each team lines up on their side, holding the rope firmly.
+            The referee signals the start (whistle or "Ready, Set, Pull!").
+            Gameplay
+            Players pull the rope toward their side using strength and teamwork.
+            The goal is to pull the opposing team across the boundary line.
+            The game continues until one team is pulled across the line or someone lets go of the rope.
+          </p>
+          <h5>Rules:</h5>
+          <p>All players must hold the rope; no tying or looping around the body.
+            No sitting or lying down while pulling.
+            Hands must stay in their original position (no re-gripping).
+            The team that pulls the center mark past their boundary line wins.
+            The referee ensures fair play and stops the match if necessary.
+            Fouls & Disqualifications
+            Letting go of the rope intentionally results in a loss.
+            Using unfair grips (tying the rope around hands or body) is not allowed.
+            Dangerous pulling techniques (sudden jerks, twisting) can lead to disqualification.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="puzzle" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">More Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Number of Players
+            Single Player: Most puzzles are designed for 1 player (e.g., jigsaw puzzles, Sudoku).
+            Multiple Players: Some puzzles can be solved in teams or groups (e.g., escape room puzzles, crossword
+            challenges).
+            Competitive Puzzle Games: Games like Scrabble, Tetris Battle, or Chess Puzzles involve multiple players
+            competing for the best score.
+          </p>
+          <h5>How to play</h5>
+          <p>Each type of puzzle has its own rules, but the general goal is to solve a problem, complete a pattern, or
+            arrange pieces correctly.
+
+            Jigsaw Puzzles (Solo or Group)
+            Sort the pieces by edges and colors.
+            Build the border first (corners and edges).
+            Fill in the middle using color patterns and shapes.
+            Continue until the puzzle is complete.
+            Logic Puzzles (Sudoku, Crosswords, Riddles)
+            Read the problem carefully.
+            Use deduction and reasoning to fill in missing pieces.
+            Avoid contradictions; use trial and error if necessary.
+            Complete the puzzle within the given rules.
+            Word Puzzles (Scrabble, Anagrams, Word Search)
+            Form words using given letters.
+            Follow the word rules (Scrabble has a dictionary, crosswords use clues).
+            Earn points by making longer or more complex words.
+            Escape Room Puzzles (Team-based)
+            Find clues hidden in the room.
+            Solve riddles and unlock objects using logic.
+            Work as a team to escape within the time limit.
+          </p>
+          <h5>Rules:</h5>
+          <p>Follow the game-specific rules (e.g., Sudoku rules vs. jigsaw puzzle rules).
+            No external help (for competitive puzzles).
+            Time limits may apply (in escape rooms, Sudoku tournaments, or competitive Tetris).
+            Use problem-solving skills rather than guessing.
+            For multiplayer puzzles, take turns or work together.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="darts" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">More Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Number of Players
+            Minimum Players: 1 (You can practice alone).
+            Standard Game: 2 players (1 vs. 1).
+            Teams: 2 vs. 2 or more (Doubles and team matches).
+            Casual Play: Any number of players can take turns.
+          </p>
+          <h5>How to play</h5>
+          <p>Each player starts with 501 points.
+            Players take turns throwing 3 darts per round.
+            Subtract the score of the three darts from the total.
+            The goal is to reach exactly 0 points.
+            The last dart must land on a double or the bullseye.
+            If a player scores more than needed, the turn is void (called a "Bust").
+            The first player to reach 0 wins.
+          </p>
+          <h5>Rules:</h5>
+          <p>Players must stand behind the throwing line (oche).
+            If a dart bounces off or falls, it does not count.
+            If a player scores too much on their final throw (Bust), the turn resets.
+            In official tournaments, players must throw within a time limit.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="hide" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">More Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Number of Players
+            Minimum Players: 2 (1 seeker, 1 hider).
+            Recommended Players: 3-10 players for a balanced game.
+            Maximum Players: No strict limit, but large games may require a bigger playing area.
+          </p>
+          <h5>How to play</h5>
+          <p>Game Setup
+            Choose a Seeker – One player is selected to count while others hide.
+            Set a Hiding Area – Define clear boundaries (e.g., playground, house, backyard).
+            Designate a Safe Zone – A "home base" where hiders can run to avoid being tagged.
+            Gameplay
+            The seeker closes their eyes and counts (e.g., from 10 to 50) while others hide.
+            Hiders find a hiding spot before the seeker finishes counting.
+            The seeker shouts "Ready or not, here I come!" and begins searching.
+            The seeker finds and tags hiders one by one.
+            If a hider reaches the safe zone without being tagged, they are safe.
+            The game ends when all hiders are found or safe.
+          </p>
+          <h5>Rules:</h5>
+          <p>The seeker must count aloud with their eyes closed.
+            Hiders cannot change hiding spots after the seeker starts searching.
+            The game continues until all hiders are found or a time limit is reached.
+            No leaving the play area (players must hide within set boundaries).
+            If a hider reaches the safe zone before being tagged, they are safe.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="volly" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitle">More Information</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Number of Players
+            Official Team (Indoor Volleyball): 6 vs. 6 (Total: 12 players on the court).
+            Beach Volleyball: 2 vs. 2 (Total: 4 players).
+            Casual Play: Any number of players can participate, as long as teams are balanced.
+            Substitutes: Each team can have 6 additional players in official matches.
+          </p>
+          <h5>How to play</h5>
+          <p>Game Setup
+            Two teams line up on opposite sides of the net.
+            A coin toss decides which team serves first.
+            Each team rotates players clockwise when they gain the serve.
+            Basic Gameplay
+            The server stands behind the baseline and serves the ball over the net.
+            The receiving team must pass, set, and attack within 3 touches.
+            The rally continues until:
+            The ball lands on the ground (point to the other team).
+            A team commits a foul or error.
+            The team that wins a rally scores a point (Rally Scoring System).
+            The first team to reach 25 points (win by 2) wins the set.
+            If the game goes to a deciding set (5th set), it is played up to 15 points.
+          </p>
+          <h5>Rules:</h5>
+          <p>In volleyball, each team is allowed up to three touches per turn, including a pass, set, and attack, but no
+            player can hit the ball twice in a row unless blocking. The ball must stay in play, go over the net within
+            the boundary lines, and not touch the ground inside their court. Players rotate clockwise after winning a
+            serve, and back-row players cannot attack from in front of the 3m line. Serves must be made from behind the
+            baseline, and while the ball can touch the net, it must land in play; if it goes out of bounds, the opposing
+            team earns a point. Fouls and violations include net touches, double hits, carrying/lifting the ball, and
+            foot faults if the server steps on or over the baseline before serving. Following these rules ensures fair
+            and competitive gameplay</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 <!-- <footer></footer> -->
 
