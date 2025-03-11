@@ -11,7 +11,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,509;1,509&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
     rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <style>
@@ -22,8 +23,8 @@
 
   body {
     font-family: "Nunito Sans", serif;
-    background-color: #FFFFFF;
-    color: #6B7280;
+    background: linear-gradient(to right, #0A192F, #1F2937);
+    color: #ffffff;
     margin: 0;
     padding: 0;
   }
@@ -32,27 +33,76 @@
     scroll-behavior: smooth;
   }
 
-  h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
     font-family: "Montserrat", serif;
+    letter-spacing: 1px;
     color: #1E3A8A;
-    font-weight: 600;
+    font-weight: 700;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+    position: relative; 
+    z-index: 3;          
+    margin-bottom: 25px; 
   }
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #1E3A8A;
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5); 
+    margin-bottom: 20px; 
+}
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+}
 
   .navbar {
-    background-color: #1E3A8A;
+    transition: background 0.3s ease-in-out;
+  }
 
+  /* Hide Bootstrap’s default arrow but keep hover effects working */
+  .navbar-nav .dropdown-toggle::after {
+    content: "";
+    border: none !important;
+    display: inline-block;
+    width: 0;
+    height: 0;
+  }
 
+  .navbar-nav .nav-item .nav-link {
+    position: relative;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .navbar-nav .nav-item .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: #2563EB;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+  }
+
+  .navbar-nav .nav-item .nav-link:hover::after {
+    width: 100%;
+    left: 0;
   }
 
 
-  .navbar a {
-    color: #FFFFFF !important;
-    font-weight: 600;
+  /* Click Effect */
+  .navbar-nav .nav-item .nav-link:active {
+    transform: scale(0.9);
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.7);
   }
 
   .btn-primary {
@@ -79,24 +129,21 @@
     margin-bottom: 40px;
   }
 
-  .nav-item-dropdown {
-    color: #1E3A8A;
-  }
-
   .dropdown-menu {
-    background-color: #1E3A8A;
-    /* Navy blue */
-    border: 1px solid #6B7280;
-    /* Grey */
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border: none;
+    transition: background 0.3s ease-in-out;
   }
 
-  .dropdown-item {
+  .dropdown-menu .dropdown-item {
     color: white;
+
   }
 
-  .dropdown-item:hover {
-    background-color: #6B7280;
-    color: white;
+  .dropdown-menu .dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+
   }
 
   .logo {
@@ -105,72 +152,339 @@
   }
 
   .card {
-    background-color: #6b72805d;
+    /* background-color: #6b72805d; */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* background: #0F172A; */
+    background: linear-gradient(to right, #1E3A8A, #374151);
+    color: white;
+    border: 1px solid #4B5563;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: stretch;
+
   }
-  .footer{
-	background-color: #162D67;
+  .card-img {
+    width: 50%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+  .row {
+    row-gap: 40px;
+}
+
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+  }
+  @media (max-width: 575px) {
+    .card {
+        width: 90%;
+        margin: 15px; 
+        padding: 15px;
+        margin-bottom: 40px; 
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+
+    .card img {
+        height: 150px; 
+        object-fit: cover;
+    }
+}
+
+/* 📲 Tablets (576px - 768px) */
+@media (max-width: 768px) {
+    .card {
+        width: 80%;
+        padding: 18px;
+        margin-bottom: 25px; 
+        flex-direction: column; 
+    }
+    .card-img {
+        width: 100%; 
+        height: auto; 
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+    }
+}
+
+  .modal-content {
+    background: linear-gradient(to right, #1E1E2F, #2C2C3E);
+    color: white;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+  }
+
+
+  .modal-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+
+  .modal-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+
+  .btn-close {
+    filter: invert(1);
+  }
+
+  .modal-footer .btn {
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .modal-footer .btn-primary {
+    background: #2563EB;
+    border: none;
+  }
+
+  .modal-footer .btn-primary:hover {
+    background: #3B82F6;
+  }
+
+  .modal-footer .btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+
+  .modal-footer .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  .modal.fade .modal-dialog {
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  }
+
+  .modal.show .modal-dialog {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .footer {
+    background-color: #353f57;
     padding: 70px 0;
-}
-.footer-col{
-   width: 25%;
-   padding: 0 15px;
-}
-.footer-col h4{
-	font-size: 18px;
-	color: #ffffff;
-	text-transform: capitalize;
-	margin-bottom: 35px;
-	font-weight: 500;
-	position: relative;
-}
-.footer-col h4::before{
-	content: '';
-	position: absolute;
-	left:0;
-	bottom: -10px;
-	background-color: #e91e63;
-	height: 2px;
-	box-sizing: border-box;
-	width: 50px;
-}
-.footer-col ul li:not(:last-child){
-	margin-bottom: 10px;
-}
-.footer-col ul li a{
-	font-size: 16px;
-	text-transform: capitalize;
-	color: #ffffff;
-	text-decoration: none;
-	font-weight: 300;
-	color: #bbbbbb;
-	display: block;
-	transition: all 0.3s ease;
-}
-.footer-col ul li a:hover{
-	color: #ffffff;
-	padding-left: 8px;
-}
-.footer-col .social-links a{
-	display: inline-block;
-	height: 40px;
-	width: 40px;
-	background-color: rgba(255,255,255,0.2);
-	margin:0 10px 10px 0;
-	text-align: center;
-	line-height: 40px;
-	border-radius: 50%;
-	color: #ffffff;
-	transition: all 0.5s ease;
-}
-.footer-col .social-links a:hover{
-	color: #24262b;
-	background-color: #ffffff;
-}
+    margin-top: 50px;
+  }
+
+  .footer-col {
+    width: 25%;
+    padding: 0 15px;
+  }
+
+  .footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+  }
+
+  .footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #1e32e9;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+  }
+
+  .footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+  }
+
+  .footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+  }
+
+  .footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+  }
+
+  .footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+
+  }
+
+  /* Hero Section Styling */
+  .hero-section {
+    height: 100vh;
+    background: linear-gradient(to right, #111827, #1E293B);
+    display: flex;
+    align-items: center;
+    padding: 50px;
+    color: white;
+  }
+
+  .hero-content {
+    max-width: 600px;
+  }
+
+  .hero-text {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+  }
+
+  .hero-subtitle {
+    font-size: 1.7rem;
+    opacity: 0.8;
+  }
+
+  .hero-btn {
+    font-size: 1.2rem;
+    padding: 12px 24px;
+    background-color: #1E40AF;
+    color: white;
+    border: none;
+    transition: background 0.3s ease-in-out;
+  }
+
+  .hero-btn:hover {
+    background-color: #2563EB;
+  }
+
+  #backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    padding: 10px 15px;
+    font-size: 18px;
+    border-radius: 8px;
+    background: #1E40AF;
+    color: white;
+    border: none;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  #backToTop:hover {
+    background: #2563EB;
+  }
+
+  #backToTop.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 992px) {
+    .footer-col {
+      width: 50%;
+      margin-bottom: 30px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .footer {
+      padding: 50px 0;
+    }
+
+    .footer-col {
+      width: 100%;
+      text-align: center;
+    }
+
+    .footer-col h4::before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .footer-col ul li a {
+      font-size: 14px;
+    }
+
+    .footer-col .social-links a {
+      height: 35px;
+      width: 35px;
+      line-height: 35px;
+      margin: 5px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer {
+      padding: 40px 0;
+    }
+
+    .footer-col h4 {
+      font-size: 16px;
+    }
+
+    .footer-col ul li a {
+      font-size: 14px;
+    }
+
+    .footer-col .social-links a {
+      height: 30px;
+      width: 30px;
+      line-height: 30px;
+    }
+  }
 </style>
 
 <body>
 
-  <nav class="navbar navbar-expand-lg fixed-top">
+  <nav class="navbar navbar-expand-lg sticky-top bg-transparent position-absolute w-100 navbar-dark">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="#">
         <img src="assets/images/navlogo.png" alt="Logo" class="logo">
@@ -204,7 +518,18 @@
       </div>
     </div>
   </nav>
-  <div id="carouselExampleIndicators" class="carousel Slide" data-bs-ride="carousel">
+  <div class="hero-section">
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title hero-text">Your Ultimate Game Hub</h1>
+        <p class="hero-subtitle hero-text" style="animation-delay: 0.5s;">
+          Discover exciting games and getaway plans tailored just for you.
+        </p>
+        <a href="#kids" class="btn btn-light hero-btn hero-text" style="animation-delay: 1s;">Explore Now</a>
+      </div>
+    </div>
+  </div>
+  <!-- <div id="carouselExampleIndicators" class="carousel Slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
         aria-current="true" aria-label="Slide 1"></button>
@@ -234,50 +559,52 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div>
+  </div> -->
 
   <div class="container mt-4">
     <hr class="border-3 border-primary">
     <div id="kids" class=" row text-center">
-      <h1>kids</h1>
+      <h1>Kids</h1>
       <h2 class="mt-5">Indoor</h2>
-      <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
+      <div class="col-md-6 d-flex">
+        <div class="card mb-3 h-100 w-100" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4">
               <img src="assets/images/uno.jpg" class="img-fluid rounded-start" alt="Image description">
             </div>
             <div class="col-md-8">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">UNO</h5>
-                <p class="card-text">
+                <p class="card-text flex-grow-1">
                   UNO is a fun and fast-paced card game where players race to be the first to score 500 points (or
                   another agreed target).
                   It's played with a special deck of 108 cards and is popular for parties, family game nights, and
                   casual play.
                 </p>
-                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uno">Learn More</a>
+                <div class="card-footer"><a href="" class="btn btn-primary mt-auto" data-bs-toggle="modal"
+                    data-bs-target="#uno">Learn More</a></div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
+      <div class="col-md-6 d-flex">
+        <div class="card mb-3 h-100 w-100" style="max-width: 540px;">
           <div class="row g-0">
             <div class="col-md-4">
               <img src="assets/images/jenga.jpg" class="img-fluid rounded-start" alt="Image description">
             </div>
             <div class="col-md-8">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Jenga</h5>
-                <p class="card-text">
+                <p class="card-text flex-grow-1">
                   Jenga is a fun and challenging block-stacking game where players take turns removing wooden blocks
                   from a
                   tower and placing them on top without making it collapse.
                   It requires strategy, patience, and a steady hand.
                 </p>
-                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#jenga">Learn More</a>
+                <div class="card-footer"><a href="" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#jenga">Learn More</a></div>
               </div>
             </div>
           </div>
@@ -289,46 +616,50 @@
     <div class="row text-center">
       <h2 class="mt-3"> Outdoor</h2>
       <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 w-100 h-100" style="max-width: 540px;">
           <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex">
               <img src="assets/images/basketball.jpg" class="img-fluid rounded-start" alt="Image description">
             </div>
             <div class="col-md-8">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Basketball</h5>
-                <p class="card-text">
+                <p class="card-text flex-grow-1">
                   Basketball is a team sport where players aim to score points by throwing a ball through the opponent's
                   hoop.
                   It is one of the most popular sports worldwide, played professionally and recreationally.
                 </p>
-                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basketball">Learn More</a>
-                <button class="btn btn-primary">
-                  <i class="fas fa-map-marker-alt"></i>
-              </button>
+                <div class="card-footer"><a href="" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#basketball">Learn More</a>
+                  <button class="btn btn-primary">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 h-100 w-100" style="max-width: 540px;">
           <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex">
               <img src="assets/images/bocce ball.jpg" class="img-fluid rounded-start" alt="Image description">
             </div>
             <div class="col-md-8">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Bocce Ball</h5>
-                <p class="card-text">
+                <p class="card-text flex-grow-1">
                   Bocce Ball is an ancient Italian lawn game where players take turns tossing balls to get as close as
                   possible to a smaller target ball (called the pallino).
                   It's a relaxing yet strategic game, often played at parks, beaches, or backyards.
                 </p>
-                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#bocce">Learn More</a>
-                <button class="btn btn-primary">
-                  <i class="fas fa-map-marker-alt"></i>
-              </button>
+                <div class="card-footer"><a href="" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#bocce">Learn More</a>
+                  <button class="btn btn-primary">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                </button>
               </div>
             </div>
           </div>
@@ -344,42 +675,44 @@
       <h1 class="mt-2">Family</h1>
       <h2 class="mt-5">Indoor</h2>
       <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 h-100 w-100" style="max-width: 540px;">
           <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex">
               <img src="assets/images/monopoly.jpg" class="img-fluid rounded-start" alt="Image description">
             </div>
             <div class="col-md-8">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Monopoly</h5>
-                <p class="card-text">
+                <p class="card-text flex-grow-1">
                   Monopoly is a classic board game about buying, trading, and developing properties to bankrupt
                   opponents
                   and become the richest player.
                   It is one of the most famous board games worldwide and is published by Hasbro.
                 </p>
-                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#monopoly">Learn More</a>
+                <div class="card-footer"><a href="" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#monopoly">Learn More</a></div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 h-100 w-100" style="max-width: 540px;">
           <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex">
               <img src="assets/images/scramble.jpg" class="img-fluid rounded-start" alt="Image description">
             </div>
             <div class="col-md-8">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Scramble</h5>
-                <p class="card-text">
+                <p class="card-text flex-grow-1">
                   Scrabble is a classic word board game where players use letter tiles to create words and score points
                   based on the letters and placement on the board.
                   It is a game of vocabulary, strategy, and skill.
                 </p>
 
-                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#scramble">Learn More</a>
+                <div class="card-footer"><a href="" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#scramble">Learn More</a></div>
               </div>
             </div>
           </div>
@@ -389,48 +722,52 @@
     <div class="row text-center">
       <h2 class="mt-3">Outdoor</h2>
       <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 h-100 w-100" style="max-width: 540px;">
           <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex">
               <img src="assets/images/corn hole.jpg" class="img-fluid rounded-start" alt="Image description">
             </div>
             <div class="col-md-8">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Corn Hole</h5>
-                <p class="card-text">
+                <p class="card-text flex-grow-1">
                   Cornhole (also called Bean Bag Toss) is a popular outdoor lawn game where players throw bean bags at a
                   raised board with a hole in it.
                   It's commonly played at tailgates, barbecues, and casual gatherings.
                 </p>
 
-                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#corn">Learn More</a>
-                <button class="btn btn-primary">
-                  <i class="fas fa-map-marker-alt"></i>
-              </button>
+                <div class="card-footer"><a href="" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#corn">Learn More</a>
+                  <button class="btn btn-primary">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 h-100 w-100" style="max-width: 540px;">
           <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex">
               <img src="assets/images/mini golf.jpg" class="img-fluid rounded-start" alt="Image description">
             </div>
             <div class="col-md-8">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">DIY Mini Golf</h5>
-                <p class="card-text">
+                <p class="card-text flex-grow-1">
                   Mini Golf (or Putt-Putt) is a fun, simplified version of golf that can be played in outdoors.
                   A DIY Mini Golf course allows you to create your own holes using household items, making it a great
                   game
                   for family, friends, or parties.
                 </p>
-                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mini">Learn More</a>
-                <button class="btn btn-primary">
-                  <i class="fas fa-map-marker-alt"></i>
-              </button>
+                <div class="card-footer"><a href="" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#mini">Learn More</a>
+                  <button class="btn btn-primary">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                </button>
               </div>
             </div>
           </div>
@@ -444,15 +781,15 @@
       <h1 class="mt-2">Men</h1>
       <h2 class="mt-5">Indoor</h2>
       <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 h-100 w-100" style="max-width: 540px;">
           <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex">
               <img src="assets/images/poker.jpg" class="img-fluid rounded-start" alt="Image description">
             </div>
             <div class="col-md-8">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Poker</h5>
-                <p class="card-text">
+                <p class="card-text flex-grow-1">
                   Poker is a card game that involves strategy, skill, and betting, where players compete to form the
                   best
                   hand or bluff their opponents into folding.
@@ -460,28 +797,30 @@
                   and
                   Seven-Card Stud.
                 </p>
-                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#poker">Learn More</a>
+                <div class="card-footer"><a href="" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#poker">Learn More</a></div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 h-100 w-100" style="max-width: 540px;">
           <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex">
               <img src="assets/images/chess.jpg" class="img-fluid rounded-start" alt="Image description">
             </div>
             <div class="col-md-8">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Chess</h5>
-                <p class="card-text">
+                <p class="card-text flex-grow-1">
                   Chess is a strategic board game played between two players. It requires deep thinking, tactical moves,
                   and
                   strategic planning.
                   Chess is one of the most popular and respected board games in the world.
                 </p>
-                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#chess">Learn More</a>
+                <div class="card-footer"><a href="" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#chess">Learn More</a></div>
               </div>
             </div>
           </div>
@@ -491,49 +830,53 @@
     <div class="row text-center">
       <h2 class="mt-3">Outdoor</h2>
       <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 h-100 w-100" style="max-width: 540px;">
           <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex">
               <img src="assets/images/dodge.jpg" class="img-fluid rounded-start" alt="Image description">
             </div>
             <div class="col-md-8">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Dodge Ball</h5>
-                <p class="card-text">
+                <p class="card-text flex-grow-1">
                   Dodgeball is a fast-paced team sport where players try to eliminate opponents by hitting them with a
                   ball
                   while avoiding getting hit themselves.
                   It is commonly played in schools, gymnasiums, and recreational leagues.
                 </p>
 
-                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#dodge">Learn More</a>
-                <button class="btn btn-primary">
-                  <i class="fas fa-map-marker-alt"></i>
-              </button>
+                <div class="card-footer"><a href="" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#dodge">Learn More</a>
+                  <button class="btn btn-primary">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 h-100 w-100" style="max-width: 540px;">
           <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex">
               <img src="assets/images/tug.jpg" class="img-fluid rounded-start" alt="Image description">
             </div>
             <div class="col-md-8">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Tug of War</h5>
-                <p class="card-text">
+                <p class="card-text flex-grow-1">
                   Tug of War is a classic team sport where two teams pull on opposite ends of a rope, trying to drag the
                   other team across a designated line.
                   It is a test of strength, teamwork, and strategy.
                 </p>
 
-                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tug">Learn More</a>
-                <button class="btn btn-primary">
-                  <i class="fas fa-map-marker-alt"></i>
-              </button>
+                <div class="card-footer"><a href="" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#tug">Learn More</a>
+                  <button class="btn btn-primary">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -547,42 +890,45 @@
       <h1 class="mt-2">Women</h1>
       <h2 class="mt-5">Indoor</h2>
       <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 h-100 w-100" style="max-width: 540px;">
           <div class="row g-0">
-            <div class="col-md-4">
-              <img src="assets/images/puzzle-7613344_640.jpg" class="img-fluid rounded-start" alt="Image description">
+            <div class="col-md-4 d-flex">
+              <img src="assets/images/puzzle-7613344_640.jpg" class="img-fluid rounded-start object-fit-cover"
+                alt="Image description">
             </div>
             <div class="col-md-8">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Puzzle</h5>
-                <p class="card-text">
+                <p class="card-text flex-grow-1">
                   A puzzle game is a type of game that challenges players to solve problems using logic, pattern
                   recognition, or creativity.
                   Puzzle games can be played alone or with multiple players, depending on the type of puzzle.
                 </p>
 
-                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#puzzle">Learn More</a>
+                <div class="card-footer"><a href="" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#puzzle">Learn More</a></div>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div class="col-md-6">
-        <div class="card mb-3" style="max-width: 540px;">
+        <div class="card mb-3 h-100 w-100" style="max-width: 540px;">
           <div class="row g-0">
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex">
               <img src="assets/images/darts.jpg" class="img-fluid rounded-start" alt="Image description">
             </div>
             <div class="col-md-8">
-              <div class="card-body">
+              <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Darts</h5>
-                <p class="card-text">
+                <p class="card-text flex-grow-1">
                   Darts is a precision-based game where players throw small darts at a circular target (dartboard) to
                   score
                   points.
                   It is played in bars, tournaments, and casual settings, requiring both skill and strategy.
                 </p>
-                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#darts">Learn More</a>
+                <div class="card-footer"><a href="" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#darts">Learn More</a></div>
               </div>
             </div>
           </div>
@@ -591,48 +937,51 @@
       <div class="row text-center">
         <h2 class="mt-3">Outdoor</h2>
         <div class="col-md-6">
-          <div class="card mb-3" style="max-width: 540px;">
+          <div class="card mb-3 h-100 w-100" style="max-width: 540px;">
             <div class="row g-0">
-              <div class="col-md-4">
+              <div class="col-md-4 d-flex">
                 <img src="assets/images/hide and seek.jpg" class="img-fluid rounded-start" alt="Image description">
               </div>
               <div class="col-md-8">
-                <div class="card-body">
+                <div class="card-body d-flex flex-column">
                   <h5 class="card-title">Hide and Seek</h5>
-                  <p class="card-text">
+                  <p class="card-text flex-grow-1">
                     Hide and Seek is a classic children's game played worldwide, where players hide while one person
                     (the
                     seeker) tries to find them.
                     It's a fun and active game that encourages stealth, strategy, and observation skills.
                   </p>
-                  <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#hide">Learn More</a>
-                  <button class="btn btn-primary">
-                    <i class="fas fa-map-marker-alt"></i>
-                </button>
+                  <div class="card-footer"><a href="" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#hide">Learn More</a>
+                    <button class="btn btn-primary">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="card mb-3" style="max-width: 540px;">
+          <div class="card mb-3 h-100 w-100" style="max-width: 540px;">
             <div class="row g-0">
-              <div class="col-md-4">
+              <div class="col-md-4 d-flex">
                 <img src="assets/images/volly.jpg" class="img-fluid rounded-start" alt="Image description">
               </div>
               <div class="col-md-8">
-                <div class="card-body">
+                <div class="card-body d-flex flex-column">
                   <h5 class="card-title">Volly Ball</h5>
-                  <p class="card-text">
-                    Volleyball is a team sport where players hit a ball over a net to score points by landing the ball
-                    on the
-                    opponent's side.
-                    It requires teamwork, agility, and strategy.
+                  <p class="card-text flex-grow-1">
+                    Volleyball is a dynamic team sport played with a ball and a net, where players aim to ground the
+                    ball on the opponent’s side. Teamwork, agility, and precise ball control are vital for executing
+                    powerful spikes, blocks, and strategic plays.
                   </p>
-                  <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#volly">Learn More</a>
-                  <button class="btn btn-primary">
-                    <i class="fas fa-map-marker-alt"></i>
-                </button>
+                  <div class="card-footer"><a href="" class="btn btn-primary" data-bs-toggle="modal"
+                      data-bs-target="#volly">Learn More</a>
+                    <button class="btn btn-primary">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1281,46 +1630,60 @@
       </div>
     </div>
   </div>
-  
-    <footer class="footer" id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="footer-col">
-            <h4>company</h4>
-            <ul>
-              <li><a href="#">about us</a></li>
-              <li><a href="#">our services</a></li>
-              <li><a href="#">privacy policy</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>get help</h4>
-            <ul>
-              <li><a href="#">FAQ</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>follow us</h4>
-            <div class="social-links">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <h4>Contact</h4>
-            <ul>
-              <li><a href="#">+92 12345678</a></li>
-              <li><a href="#">+92 45678909</a></li>
-              <li><a href="#">contact@picnicgames.com</a></li>
-            </ul>
+
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>company</h4>
+          <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our services</a></li>
+            <li><a href="#">privacy policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>get help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>follow us</h4>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
           </div>
         </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#">+92 12345678</a></li>
+            <li><a href="#">+92 45678909</a></li>
+            <li><a href="#">contact@picnicgames.com</a></li>
+          </ul>
+        </div>
       </div>
-   </footer>
+    </div>
+  </footer>
+  <button id="backToTop" class="btn btn-primary">↑ Back to Top</button>
 </body>
+<script>
+  window.addEventListener("scroll", function () {
+    let button = document.getElementById("backToTop");
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+      button.classList.add("show");
+    } else {
+      button.classList.remove("show");
+    }
+  });
 
+  document.getElementById("backToTop").addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
 <script src="assets\javascript\bootstrap.bundle.js"></script>
 
 </html>
